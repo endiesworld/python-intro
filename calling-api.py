@@ -4,14 +4,17 @@
 
 # Use the requests library to simplify making a REST API call from Python
 import requests
-
+import os
+from dotenv import load_dotenv
 # We will need the json library to read the data passed back
 # by the web service
 import json
 
+load_dotenv()
 # You need to update the SUBSCRIPTION_KEY to
 # they key for your Computer Vision Service
-SUBSCRIPTION_KEY = "fa5d1d9aa2064e8baaecdc3ed24b7999"
+computerVisionAPI_key = os.getenv('COMPUTER_VISION_API_KEY')
+SUBSCRIPTION_KEY = computerVisionAPI_key
 # You need to update the vision_service_address to the address of
 # your Computer Vision Service
 vision_service_address = "https://emmanuelpythonimageanalyzer2.cognitiveservices.azure.com/vision/v3.1/"
